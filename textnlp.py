@@ -10,6 +10,8 @@ from textblob import Word
 
 app  = Flask(__name__)
 
+nltk.download('punkt')
+
 @app.route("/")
 def form():
     return render_template('home.html')
@@ -23,7 +25,6 @@ def count_result():
 
     data = request.form.get('user_message')
     
-    nltk.download('punkt')
     # Splitting the data to  
     words = nltk.word_tokenize(data)
     sentences = nltk.sent_tokenize(data)
@@ -45,10 +46,9 @@ def dictionary():
 @app.route("/dictionary_result", methods=['POST'])
 def dictionary_result():
 
-    nltk.download('punkt')
-
     data = request.form.get('dic_text')
     meaning = Word(data).definitions
+
     return render_template('dic_nlp.html', txt_definition = f"{meaning}")
 
 @app.route("/lang_detect", methods=['POST'])
@@ -57,8 +57,6 @@ def lang_detect():
 
 @app.route("/lang_detect_result", methods=['POST'])
 def lang_detect_result():
-
-    nltk.download('punkt')
 
     data = request.form.get('user_text')
     blob = TextBlob(data)
@@ -75,8 +73,6 @@ def translate():
 @app.route("/translate_result", methods=['POST'])
 def translate_result():
 
-    nltk.download('punkt')
-
     codes = pd.read_csv('lang_codes.csv')
     codes.columns = ['Language', 'Code']
 
@@ -92,8 +88,6 @@ def check_spell():
 
 @app.route("/check_spell_result", methods=['POST'])
 def check_spell_result():
-
-    nltk.download('punkt')
 
     data = request.form.get('user_text')
     k = TextBlob(data)
