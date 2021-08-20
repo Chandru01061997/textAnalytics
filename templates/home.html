@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Translate-app</title>
+    </head>
+    <body style = "background-color: rgb(131, 105, 228);">
+        <h1 style="text-align: center;color: rgb(241, 227, 18)"; font size="+2"><b><strong>SELECT THE OPERATION YOU WANT TO DO...</strong></b></h1>
+        <h1 style="text-align:center"; font size="+2"></h1>
+
+        <br></br>
+        
+        <form action="/count" method="post">
+            <p style="text-align: center;"><button>Count Words</button></p>
+        </form>
+
+        <form action="/dictionary" method="post">
+            <p style="text-align: center;"><button>Word definition</button></p>
+        </form>
+
+        <form action="/lang_detect" method="post">
+            <p style="text-align: center;"><button>Detect Language</button></p>
+        </form>
+
+        <form action="/translate" method="post">
+            <p style="text-align: center;"><button>Translation</button></p>
+        </form>
+        
+        <form action="/check_spell" method="post">
+            <p style="text-align: center;"><button>Spell Check</button></p>
+            <style>
+                form {
+    /* Center the form on the page */
+    margin: 0 auto;
+    width: 200px;
+    /* Form outline */
+    padding: 0.5em;
+    border: 4px solid rgb(243, 219, 7);
+    border-radius: 2em;
+    color: rgb(229, 245, 7);
+    }       
+            </style>
+        </form>
+
+        <h2 style="text-align:right" ><b><sub>-by Chandra Sekar. A</sub></b></h2>
+        <br></br>
+        <b><i><marquee behavior="scroll" direction="left" position:absolute>Textly - EVERYTHING WITH TEXT | COUNT WORDS | DICTIONARY | TRANSLATION | DETECT LANGUAGE -- EXPECT ENHANCMENT IN UPCOMING VERSIONS </marquee></i></b>
+    </body>
+</html>
